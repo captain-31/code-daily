@@ -18,17 +18,26 @@ inner loop: j>=abs(i)
 
 int main()
 {
-    int i,j,n=3;
-
-
-    for(i=n; i>=-n; i--) {
-    
-	    //space loop
-        for(j=n;j>=abs(i);j--)
-			printf("*");
+    int i,j,k,end, n=5;
+        
+    for(i=1; i<=n*2-1; i++) {
+        
+        if(i<=n) {
+            for(j=1; j<=i; j++) 
+                printf("*");
+        }
+        
+        if(i==n) 
+            end=n-1;
+            
+        if(i>n) {
+            for(k=1; k<=end; k++) 
+                printf("*");
+            end--;
+        }
         
         printf("\n");
     }
-
+    
     return 0;
 }
